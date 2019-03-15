@@ -5,16 +5,7 @@ class Almanac < Formula
   sha256 "cfcbd878c3425c5ba741e5b2cdf9723285c4c79ed517cea1da6bcbd3e963863d"
 
   def install
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
-    # system "cmake", ".", *std_cmake_args
-    system "make", "install" # if this fails, try separate make/make install steps
-  end
-
-  test do
-    system "false"
+    bin.install "almanac"
   end
 
 end
